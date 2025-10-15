@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.3.1/core.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script type="module" src="https://pyscript.net/releases/2024.3.1/core.js"></script>
+  <title>Pit Stop Café - Order Now</title>
+
+<style>
+  body {
+    background: linear-gradient(135deg, #1a1a1d, #e0d645);
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .navbar {
+    background: linear-gradient(90deg, #ffd60a, #111);
+  }
+
+  .order-container {
+    background: rgba(174, 175, 173, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ffd60a;
+  }
+
+  .text-primary {
+    color: #ffd60a !important;
+  }
+
+  .btn-primary {
+    background-color: #ffd60a;
+    color: #000;
+    border: none;
+    transition: 0.3s;
+  }
+
+  .btn-primary:hover {
+    background-color: #e0d645;
+    color: #000;
+  }
+
+  .food-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+
+  .menu-item {
+    display: flex;
+    align-items: center;
+    background-color: #bcbeba;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px #ffd60a;
+  }
+
+  .menu-text {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+  }
+
+  .price-tag {
+    font-weight: bold;
+    color: #ffd60a;
+  }
+
+  .back-btn {
+    margin-top: 30px;
+    background-color: #ffd60a;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .back-btn:hover {
+    background-color: #e0d645;
+    color: #000;
+  }
+
+  .form-label {
+    color: #ffd60a;
+    font-weight: bold;
+  }
+</style>
+
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="fas fa-flag-checkered me-2"></i>Pit Stop Café
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="ordering_form.html">Order Now</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container py-5">
+    <div class="order-container p-4 mb-4">
+      <h1 class="text-primary mb-4 text-center">
+        <i class="fas fa-flag-checkered me-2"></i>Fuel Up Your Appetite!
+      </h1>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-primary mb-3">Pit Stop Menu:</h3>
+
+          <div class="form-check menu-item">
+            <img src="burger.jpg" class="food-img" alt="Racer Burger">
+            <div class="menu-text">
+              <input class="form-check-input" type="checkbox" id="item1" value="249.99">
+              <label class="form-check-label" for="item1">Racer Burger</label>
+              <div class="price-tag">₱249.99</div>
+            </div>
+          </div>
+
+          <div class="form-check menu-item">
+            <img src="pasta.jpeg" class="food-img" alt="Speed Pasta">
+            <div class="menu-text">
+              <input class="form-check-input" type="checkbox" id="item4" value="199.99">
+              <label class="form-check-label" for="item4">Speed Pasta</label>
+              <div class="price-tag">₱199.99</div>
+            </div>
+          </div>
+
+          <div class="form-check menu-item">
+            <img src="fries.jpg" class="food-img" alt="Pit Fries">
+            <div class="menu-text">
+              <input class="form-check-input" type="checkbox" id="item2" value="99.99">
+              <label class="form-check-label" for="item2">Pit Fries</label>
+              <div class="price-tag">₱99.99</div>
+            </div>
+          </div>
+
+          <div class="form-check menu-item">
+            <img src="cof.jpg" class="food-img" alt="Turbo Coffee">
+            <div class="menu-text">
+              <input class="form-check-input" type="checkbox" id="item3" value="70.00">
+              <label class="form-check-label" for="item3">Turbo Coffee</label>
+              <div class="price-tag">₱70.00</div>
+            </div>
+          </div>
+
+          <div class="form-check menu-item">
+            <img src="soda.jpg" class="food-img" alt="Nitro Soda">
+            <div class="menu-text">
+              <input class="form-check-input" type="checkbox" id="item5" value="45.00">
+              <label class="form-check-label" for="item5">Nitro Soda</label>
+              <div class="price-tag">₱45.00</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h3 class="text-primary mb-3">Driver Details:</h3>
+          <div class="mb-3">
+            <label for="customer" class="form-label">Name</label>
+            <input type="text" class="form-control" id="customer" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Garage Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Enter your address">
+          </div>
+          <div class="mb-3">
+            <label for="contact_number" class="form-label">Contact Number</label>
+            <input type="text" class="form-control" id="contact_number" placeholder="Enter your contact number">
+          </div>
+        </div>
+      </div>
+
+      <div class="d-grid gap-2 col-md-6 mx-auto mt-4">
+        <button class="btn btn-primary btn-lg" type="submit" py-click="create_order">
+          Place Order 🏎️
+        </button>
+      </div>
+    </div>
+
+    <div class="order-container p-4">
+      <h3 class="text-primary mb-3">Order Summary:</h3>
+      <div id="order_output1" class="mb-2"></div>
+      <div id="order_output2" class="mb-2"></div>
+      <div id="order_output3" class="mb-2"></div>
+      <div id="show" class="h4 text-primary mt-3"></div>
+    </div>
+  </div>
+
+  <center>
+    <a href="index.html">
+      <button class="back-btn">
+        <i class="fas fa-arrow-left me-2"></i>Back to Home
+      </button>
+    </a>
+  </center>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="py" src="main2.py"></script>
+</body>
+</html>
